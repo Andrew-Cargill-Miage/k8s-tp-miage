@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/Andrew-Cargill-Miage/k8s-tp-miage.git
-    targetRevision: HEAD
+    targetRevision: main
     path: postgres
   destination:
     server: https://kubernetes.default.svc

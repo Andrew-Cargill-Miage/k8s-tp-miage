@@ -7,3 +7,5 @@ metadata:
     app: postgresdb
 data:
   POSTGRES_DB: testdb
+  POSTGRES_USER : testuser
+  POSTGRES_PASSWORD : testpassword
