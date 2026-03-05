@@ -1,25 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: postgresdb
+  name: {{ .Chart.Name }}
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: postgresdb
+      app: {{ .CHart.Name }}
   template:
     metadata:
       labels:
-        app: postgresdb
+        app: {{ .CHart.Name }}
     spec:
       containers:
-        - name: postgresdb
-          image: postgres:16
+        - name: {{ .CHart.Name }}
+          image: postgres:{{ .Values.appVersion | default "16" }}
           ports:
             - containerPort: 5432
           envFrom:
             - configMapRef:
                 name: credentials
+          resources:
+            limits:
+              cpu: {{ .Values.resources.limits.cpu | quote }}
+              memory: {{ .Values.resources.limits.memory | quote }}
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               name: db-data

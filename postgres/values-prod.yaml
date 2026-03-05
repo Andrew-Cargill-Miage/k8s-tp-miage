@@ -1,0 +1,8 @@
+env:
+  POSTGRES_DB: testdb
+  POSTGRES_USER: testuser
+  POSTGRES_PASSWORD: testpassword
+resources:
+  limits:
+    cpu: "500m"
+    memory: 512mi
