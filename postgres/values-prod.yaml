@@ -5,4 +5,4 @@ env:
 resources:
   limits:
     cpu: "500m"
-    memory: 512mi
+    memory: 512Mi
