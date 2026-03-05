@@ -9,6 +9,9 @@ spec:
     repoURL: https://github.com/Andrew-Cargill-Miage/k8s-tp-miage.git
     targetRevision: main
     path: postgres
+    helm:
+      valueFiles:
+        - values-prod.yaml
   destination:
     server: https://kubernetes.default.svc
     namespace: postgres
